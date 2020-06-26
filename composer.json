@@ -1,0 +1,19 @@
+{
+	"name": "php-assets/css-compiler-factory",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "cbl",
+			"email": "lennart.carbe@gmail.com"
+		}
+	],
+	"require": {
+		"php-assets/css": "*",
+		"php-assets/minfy": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"PhpAssets\\Css\\CompilerFactory": "src/"
+		}
+	}
+}
