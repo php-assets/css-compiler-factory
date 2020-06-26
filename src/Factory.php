@@ -30,6 +30,13 @@ class Factory
      */
     protected $minifier;
 
+    /**
+     * Create new Factory instance.
+     *
+     * @param CompilerResolver $compilerResolver
+     * @param InterpreterResolver $interpreterResolver
+     * @param MinifierInterface $minifier
+     */
     public function __construct(
         CompilerResolver $compilerResolver,
         InterpreterResolver $interpreterResolver,
