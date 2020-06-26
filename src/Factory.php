@@ -2,10 +2,10 @@
 
 namespace PhpAssets\Css\CompilerFactory;
 
-use InterpreterInterface;
-use PhpAssets\Minify\MinifierInterface;
-use PhpAssets\Css\CompilerFactory\Interpreter\InterpreterResolver;
+use PhpAssets\Css\InterpreterInterface;
+use PhpAssets\Minify\CssMinifierInterface;
 use PhpAssets\Css\CompilerFactory\Compiler\CompilerResolver;
+use PhpAssets\Css\CompilerFactory\Interpreter\InterpreterResolver;
 
 class Factory
 {
@@ -35,12 +35,12 @@ class Factory
      *
      * @param CompilerResolver $compilerResolver
      * @param InterpreterResolver $interpreterResolver
-     * @param MinifierInterface $minifier
+     * @param CssMinifierInterface $minifier
      */
     public function __construct(
         CompilerResolver $compilerResolver,
         InterpreterResolver $interpreterResolver,
-        MinifierInterface $minifier = null
+        CssMinifierInterface $minifier = null
     ) {
         $this->compilerResolver = $compilerResolver;
         $this->interpreterResolver = $interpreterResolver;
@@ -54,11 +54,9 @@ class Factory
      * @param MinifierInterface $minifier
      * @return \PhpAssets\Css\CompilerFactory\Style
      */
-    public function make(string $path, MinifierInterface $minifier = null)
+    public function make(string $path, CssMinifierInterface $minifier = null)
     {
         $interpreter = $this->interpreterResolver->resolve($path);
-
-        $this->getCompiler($interpreter);
 
         $lang = $this->getLang($path, $interpreter);
 
@@ -73,7 +71,7 @@ class Factory
      * Get CSS extension language name from path.
      *
      * @param string $path
-     * @param InterpreterInterface $interpreter
+     * @param \PhpAssets\Css\InterpreterInterface $interpreter
      * @return string
      */
     public function getLang($path, InterpreterInterface $interpreter)

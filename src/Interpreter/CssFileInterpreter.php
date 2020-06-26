@@ -1,6 +1,10 @@
 <?php
 
-class FileExtensionInterpreter implements InterpreterInterface
+namespace PhpAssets\Css\CompilerFactory\Interpreter;
+
+use PhpAssets\Css\InterpreterInterface;
+
+class CssFileInterpreter implements InterpreterInterface
 {
     /**
      * Get CSS extension language name from path.

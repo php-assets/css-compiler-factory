@@ -4,7 +4,7 @@ namespace PhpAssets\Css\CompilerFactory;
 
 use PhpAssets\Css\CompilerInterface;
 use PhpAssets\Css\InterpreterInterface;
-use PhpAssets\Minify\MinifierInterface;
+use PhpAssets\Minify\CssMinifierInterface;
 
 class Style
 {
@@ -76,15 +76,15 @@ class Style
      *
      * @param string $raw
      * @param CompilerInterface $compiler
-     * @param MinifierInterface $minifier
+     * @param CssMinifierInterface $minifier
      */
-    public function __construct($path, $lang, CompilerInterface $compiler, InterpreterInterface $intepreter, MinifierInterface $minifier = null)
+    public function __construct($path, $lang, CompilerInterface $compiler, InterpreterInterface $intepreter, CssMinifierInterface $minifier = null)
     {
         $this->path = $path;
         $this->lang = $lang;
         $this->compiler = $compiler;
         $this->interpreter = $intepreter;
-        $this->minfier = $minifier;
+        $this->minifier = $minifier;
     }
 
     /**
@@ -100,7 +100,7 @@ class Style
         $compiled = $this->compiler->compile($this->raw);
 
         if ($minify && $this->minifier) {
-            $compiled = $this->minifier->minfy($compiled);
+            $compiled = $this->minifier->minify($compiled);
         }
 
         $this->compiled = $compiled;
