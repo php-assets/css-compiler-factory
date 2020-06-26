@@ -12,8 +12,8 @@
 		}
 	],
 	"require": {
-		"php-assets/css": "*",
-		"php-assets/minfy": "*"
+		"php-assets/css": "0.*",
+		"php-assets/minfy": "0.*"
 	},
 	"autoload": {
 		"psr-4": {
