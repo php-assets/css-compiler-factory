@@ -12,12 +12,12 @@
 		}
 	],
 	"require": {
-		"php-assets/css": "0.*",
-		"php-assets/minfy": "0.*"
+		"php-assets/css": "*",
+		"php-assets/minfy": "*"
 	},
 	"autoload": {
 		"psr-4": {
-			"PhpAssets\\Css\\CompilerFactory": "src/"
+			"PhpAssets\\Css\\CompilerFactory\\": "src/"
 		}
 	}
 }
