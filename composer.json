@@ -3,8 +3,12 @@
 	"license": "MIT",
 	"authors": [
 		{
-			"name": "cbl",
+			"name": "Lennart Carstens-Behrens",
 			"email": "lennart.carbe@gmail.com"
+		},
+		{
+			"name": "Jannes Behrens",
+			"email": "jannes@aw-studio.de"
 		}
 	],
 	"require": {
