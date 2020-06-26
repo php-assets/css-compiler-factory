@@ -13,7 +13,7 @@
 	],
 	"require": {
 		"php-assets/css": "*",
-		"php-assets/minfy": "*"
+		"php-assets/minify": "*"
 	},
 	"autoload": {
 		"psr-4": {
